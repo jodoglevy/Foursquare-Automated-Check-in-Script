@@ -7,6 +7,9 @@ $credentials = "email:password";
 // vids are the ids of the different locations to check in to
 $vids = array(venue_id1,venue_id2);
 
+// this script's URL path...change if your script has a different name/path
+$url_path = "/foursquare.php";
+
 
 //no need to change any of the below...
 
@@ -28,7 +31,7 @@ curl_close($curl_handle);
 <script type="text/JavaScript">
 function timedRefresh(timeoutPeriod) 
 {
-	setTimeout("window.location='/four.php?v=<?php echo($which+1);?>'",timeoutPeriod);
+	setTimeout("window.location='<?php echo $url_path;?>?v=<?php echo($which+1);?>'",timeoutPeriod);
 }
 </script>
 </head>
